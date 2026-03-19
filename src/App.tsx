@@ -75,7 +75,7 @@ const GameRoom: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/classic-game">
       <ControlProvider>
         <ArcadeLayout>
           <Routes>
