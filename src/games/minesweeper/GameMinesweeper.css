@@ -1,0 +1,119 @@
+.game-minesweeper {
+    background: #8ba111;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+}
+
+.ms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #1a331a;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.ms-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.ms-title {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.ms-grid-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* VERTICAL CENTERING */
+    width: 100%;
+    margin: auto 0;
+}
+
+.ms-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 2px;
+    padding: 2px;
+    background: #1a331a;
+    border: 3px solid #111;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+}
+
+.ms-cell {
+    background: #8ba111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-weight: 900;
+    font-size: 16px;
+    border: 1px solid rgba(26,51,26,0.2);
+    box-shadow: inset 1px 1px 1px rgba(255,255,255,0.4);
+}
+
+.ms-cell.revealed { 
+    background: rgba(26, 51, 26, 0.05); 
+    box-shadow: none;
+    border: 1px solid rgba(26,51,26,0.05);
+}
+
+.ms-cell.flagged { color: #1a331a; }
+
+.ms-cell.cursor {
+    outline: 4px solid #1a331a;
+    outline-offset: -4px;
+    z-index: 10;
+}
+
+.ms-cell.cursor::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    animation: blink 0.5s infinite alternate;
+    background: rgba(26, 51, 26, 0.2);
+}
+
+@keyframes blink { from { opacity: 0; } to { opacity: 1; } }
+
+.overlay.ms-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 51, 26, 0.95);
+    color: #8ba111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+}
+
+.reset-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.ms-footer {
+    text-align: center;
+    font-size: 8px;
+    font-weight: 900;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}

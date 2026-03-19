@@ -1,0 +1,123 @@
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    overflow: hidden;
+}
+
+.arcade-container {
+    width: 480px;
+    height: 850px;
+    background: var(--gb-body-color, #c4c4c4);
+    padding: 15px;
+    border-radius: 15px 15px 100px 15px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.9), inset 2px 2px 5px rgba(255,255,255,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    box-sizing: border-box;
+    transition: background 0.5s ease;
+}
+
+/* Scaling */
+@media screen and (max-height: 900px) { .arcade-container { scale: 0.9; } }
+@media screen and (max-height: 820px) { .arcade-container { scale: 0.8; } }
+@media screen and (max-height: 720px) { .arcade-container { scale: 0.7; } }
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+    #root { padding: 0; }
+    .arcade-container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        scale: 1 !important;
+        padding: 5px;
+    }
+    
+    .arcade-bezel {
+        height: 60% !important; 
+        padding: 10px 12px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .gamepad-container { padding: 5px 10px !important; }
+    .dpad { scale: 0.8; }
+    .action-btns { scale: 0.8; }
+    .arcade-brand { font-size: 14px !important; margin-top: 2px !important; }
+}
+
+.arcade-bezel {
+    width: 100%;
+    height: 480px;
+    background: #333333;
+    padding: 20px 25px; /* Sedikit dikecilkan agar teks di bawah muat */
+    border-radius: 10px 10px 60px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.arcade-screen {
+    width: 100%;
+    height: 100%;
+    background: #8ba111;
+    border: 5px solid #111;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* BIGGER BRANDING TEXT */
+.arcade-brand {
+    padding-top: 15px;
+    color: #ffffff; 
+    font-size: 18px; /* LEBIH BESAR SEPERTI PERMINTAAN */
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-style: italic;
+    opacity: 1; /* Full visibility */
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.gamepad-container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.speaker-grill {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    display: flex;
+    gap: 6px;
+    transform: rotate(-30deg);
+}
+
+.speaker-grill span {
+    width: 5px;
+    height: 60px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,0.5);
+}

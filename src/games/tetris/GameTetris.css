@@ -1,0 +1,104 @@
+.game-tetris {
+    background: #8ba111;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.tetris-main {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.tetris-board {
+    aspect-ratio: 10 / 20;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background: rgba(139, 161, 17, 0.4);
+    border: 3px solid #1a331a;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.tetris-aside {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.stat-v, .next-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #1a331a;
+    padding: 5px;
+    background: rgba(0,0,0,0.05);
+}
+
+.label {
+    font-size: 8px;
+    font-weight: bold;
+    color: #1a331a;
+    margin-bottom: 5px;
+}
+
+.v {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a331a;
+}
+
+.preview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.p-row {
+    display: flex;
+    gap: 2px;
+}
+
+.p-cell {
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.t-cell {
+    border: 1px solid rgba(26, 51, 26, 0.1);
+    background-clip: content-box;
+}
+
+.game-tetris .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 51, 26, 0.9);
+    color: #8ba111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    text-align: center;
+}
+
+.game-tetris .overlay h2 { font-size: 18px; }
+.game-tetris .overlay p { font-size: 10px; }
+
+.game-footer {
+    font-size: 8px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #1a331a;
+    margin-top: 5px;
+}

@@ -1,0 +1,148 @@
+.gamepad-container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.main-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* D-PAD DESAIN BARU (REKONSEPTUASI) */
+.dpad {
+    position: relative;
+    width: 135px;
+    height: 135px;
+}
+
+/* Latar belakang silang hitam */
+.dpad-cross {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.dpad-cross::before, .dpad-cross::after {
+    content: '';
+    position: absolute;
+    background: #333;
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+.dpad-cross::before { width: 135px; height: 45px; top: 45px; left: 0; }
+.dpad-cross::after { width: 45px; height: 135px; left: 45px; top: 0; }
+
+.gp-btn {
+    border: none;
+    cursor: pointer;
+    background: transparent; /* Background sudah di dpad-cross */
+    user-select: none;
+    touch-action: manipulation;
+    z-index: 10;
+}
+
+.dpad-btn {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dpad-up { top: 0; left: 45px; }
+.dpad-down { bottom: 0; left: 45px; }
+.dpad-left { left: 0; top: 45px; }
+.dpad-right { right: 0; top: 45px; }
+
+.dpad-center-cap {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 45px;
+    left: 45px;
+    background: #333;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.dpad-center-cap::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+/* Action Buttons */
+.action-btns {
+    display: flex;
+    gap: 15px;
+    transform: rotate(-15deg);
+    padding-top: 10px;
+}
+
+.action-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-round {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #900;
+    box-shadow: 2px 6px 15px rgba(0,0,0,0.6), inset 2px 2px 5px rgba(255,255,255,0.2);
+}
+
+.btn-label {
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    transform: rotate(15deg);
+}
+
+/* System Section */
+.system-section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.system-btn-group {
+    display: flex;
+    gap: 40px;
+}
+
+.btn-pill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-rect {
+    width: 65px;
+    height: 15px;
+    background: #777;
+    border-radius: 20px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.5), inset 1px 1px 2px rgba(255,255,255,0.2);
+    transform: rotate(-30deg);
+}
+
+.system-label {
+    font-size: 10px;
+    color: #444;
+    font-weight: bold;
+    letter-spacing: 2px;
+}

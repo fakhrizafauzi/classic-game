@@ -1,0 +1,62 @@
+.game-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #8ba111; /* Sama dengan screen bg */
+    color: #1a331a;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid #1a331a;
+    padding-bottom: 5px;
+}
+
+.game-screen-area {
+    flex: 1;
+    position: relative;
+    border: 2px solid #1a331a;
+    margin: 10px 0;
+    overflow: hidden;
+    background: rgba(0,0,0,0.05); /* Kontras tipis */
+}
+
+/* Objek Game */
+.player-box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #1a331a;
+    border: 2px solid #8ba111;
+    transition: all 0.1s linear;
+}
+
+.game-hint {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-badge {
+    background: #1a331a;
+    color: #8ba111;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.game-footer {
+    font-size: 10px;
+    text-align: center;
+    opacity: 0.7;
+}

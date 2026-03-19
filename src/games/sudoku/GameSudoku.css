@@ -1,0 +1,67 @@
+.game-sudoku {
+    background: #8ba111;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sudoku-header {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #1a331a;
+    margin-bottom: 10px;
+}
+
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    background: rgba(26, 51, 26, 0.2);
+    border: 2px solid #1a331a;
+    flex: 1;
+}
+
+.s-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a331a;
+    border: 1px solid rgba(26, 51, 26, 0.1);
+    position: relative;
+}
+
+.s-cell.orig {
+    background: rgba(26, 51, 26, 0.1);
+}
+
+.s-cell.cursor {
+    outline: 2px solid #1a331a;
+    outline-offset: -2px;
+    z-index: 10;
+    background: rgba(26, 51, 26, 0.2);
+}
+
+.s-cell.cursor::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    animation: blink 0.5s infinite alternate;
+    background: rgba(26, 51, 26, 0.2);
+}
+
+@keyframes blink {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.game-footer {
+    text-align: center;
+    font-size: 8px;
+    padding-top: 10px;
+    border-top: 2px solid #1a331a;
+    margin-top: 5px;
+}
